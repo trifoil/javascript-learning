@@ -72,4 +72,26 @@ document.getElementById("mySubmit").onclick = function(){
 }
 ```
 
-##
+## Type conversion
+
+String to number, boolean, string
+```
+x=Number(x);
+x=Boolean(x);
+x=String(x);
+```
+
+## Const
+
+Instead of 
+```
+let pi;
+```
+
+Write 
+```
+const PI;
+```
+
+## Count
+

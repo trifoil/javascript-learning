@@ -1,7 +1,9 @@
-let username;
+const pie = 3.141595;
+let radius;
+let circumference;
 
-document.getElementById("mySubmit").onclick = function(){
-    username = document.getElementById("myText").value;
-    console.log(username);
-    document.getElementById("myH1").textContent = `Welcome ${username}`
-}
+radius = window.prompt('enter radius');
+radius = Number(radius);
+
+circumference = 2 * pie * radius;
+console.log(circumference);
