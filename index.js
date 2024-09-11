@@ -1,9 +1,23 @@
-const pie = 3.141595;
-let radius;
-let circumference;
+const DISPLAY = document.getElementById("display");
+const RM = document.getElementById("removeButton");
+const ADD = document.getElementById("addButton");
+const RST = document.getElementById("resetButton");
 
-radius = window.prompt('enter radius');
-radius = Number(radius);
+let count = 0;
 
-circumference = 2 * pie * radius;
-console.log(circumference);
+DISPLAY.textContent = count;
+
+RM.onclick = function() {
+    count--;
+    DISPLAY.textContent = count;
+}
+
+ADD.onclick = function() {
+    count++;
+    DISPLAY.textContent = count;
+}
+
+RST.onclick = function() {
+    count = 0;
+    DISPLAY.textContent = count;
+}
