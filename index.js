@@ -1,23 +1,11 @@
-const DISPLAY = document.getElementById("display");
-const RM = document.getElementById("removeButton");
-const ADD = document.getElementById("addButton");
-const RST = document.getElementById("resetButton");
+const MIN = 50;
+const MAX = 100;
+const myButton = document.getElementById("a");
+const myText = document.getElementById("b");
+let randomN = "click on the button to start"
 
-let count = 0;
-
-DISPLAY.textContent = count;
-
-RM.onclick = function() {
-    count--;
-    DISPLAY.textContent = count;
-}
-
-ADD.onclick = function() {
-    count++;
-    DISPLAY.textContent = count;
-}
-
-RST.onclick = function() {
-    count = 0;
-    DISPLAY.textContent = count;
+myText.textContent = randomN
+myButton.onclick = function(){
+    randomN = Math.ceil(Math.random()*(MAX-MIN))+MIN;
+    document.getElementById("b").textContent = randomN
 }

@@ -120,3 +120,54 @@ RST.onclick = function() {
     DISPLAY.textContent = count;
 }
 ```
+
+## Math objects
+
+```
+console.log(Math.PI)        //pi
+console.log(Math.E)         //euler
+z = Math.round(x);          //round closest
+z = Math.ceil(x);           //round up
+z = Math.floor(x);          //round down
+z = Math.trunc(x);          //truncate
+z = Math.pow(x,y);          //x^y
+z = Math.sqrt(x);           //square root
+z = Math.log(y);            //natural logarithm
+z = Math.sin(x);
+z = Math.abs(x);            //absolute value
+z = Math.sign(x);           //sign of x
+let max = Math.max(x,y,z);
+let min = Math.min(x,y,z);
+```
+
+## Random
+
+Between 1 and 100 
+```
+let randomN = Math.ceil(Math.random()*100);
+```
+
+Between MIN and MAX
+```
+const MIN = 50;
+const MAX = 100;
+let randomN = Math.ceil(Math.random()*(MAX-MIN))+MIN;
+```
+
+Full code 
+```
+const MIN = 50;
+const MAX = 100;
+const myButton = document.getElementById("b");
+const myText = document.getElementById("a");
+let randomN = "click on the button to start"
+
+myText.textContent = randomN
+myButton.onclick = function(){
+    randomN = Math.ceil(Math.random()*(MAX-MIN))+MIN;
+    document.getElementById("b").textContent = randomN
+}
+```
+
+## if statements
+
