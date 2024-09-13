@@ -171,3 +171,19 @@ myButton.onclick = function(){
 
 ## if statements
 
+```
+if (){
+}
+else if (){
+}
+else {
+}
+```
+
+## Logical operators
+
+```
+&&      //AND
+||      //OR
+!       //NOT
+```
