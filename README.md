@@ -169,6 +169,14 @@ myButton.onclick = function(){
 }
 ```
 
+## Time
+
+To get the now time
+```
+let today = new Date();
+let hour = today.getHours();
+```
+
 ## if statements
 
 ```

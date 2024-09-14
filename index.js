@@ -12,11 +12,10 @@ myButton.onclick = function(){
 
 
 let today = new Date();
-//let hour = today.getHours();
-let hour = 23;
+let hour = today.getHours();
 
 let day;
-if (8 < hour || hour > 20){
+if (8 < hour && hour < 20){
     day = "jour";
 }
 else {
