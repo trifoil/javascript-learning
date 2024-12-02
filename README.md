@@ -195,3 +195,75 @@ else {
 ||      //OR
 !       //NOT
 ```
+
+## Checked property
+
+```
+  
+
+```
+
+Ternary operator
+Switches
+String methods
+String slicing
+Method chaining
+Logical operators
+Strict equality
+While loops
+For loops
+Number guessing game
+Functions
+Variable scope
+Temperature conversion program
+Arrays
+Spread operator
+Rest parameters
+Dice Roller program
+Random password generator
+Callbacks
+forEach()
+map()
+filter()
+reduce()
+Function expressions
+Arrow functions
+JavaScript Objects
+What is THIS
+Constructors
+Classes
+STATIC keyword
+Inheritance
+SUPER keyword 
+Getters & Setters
+Destructuring
+Nested objects
+Arrays of objects
+Sorting
+Shuffle an array
+Dates
+Closures
+setTimeout()
+Digital Clock program
+Stopwatch program
+ES6 Modules
+Asynchronous code
+Error handling
+Calculator program
+What is the DOM?
+Element selectors
+DOM navigation
+Add & change HTML
+Mouse events
+Key events
+Hide/show HTML
+NodeLists
+classList
+Rock Paper Scissors
+Image Slider
+Callback Hell?
+Promises
+Async/Await
+JSON files
+Fetch data from an API
+Weather App project
