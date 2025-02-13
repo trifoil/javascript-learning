@@ -23,3 +23,37 @@ else {
 }
 console.log(hour)
 console.log(day)
+
+
+const mycheckbox = document.getElementById("mycheckbox");
+const myvisabtn = document.getElementById("visabtn");
+const mymastercardbtn = document.getElementById("mastercard");
+const mypaypalbtn = document.getElementById("paypal");
+const submitbtn = document.getElementById("submit");
+const subresult = document.getElementById("subresult");
+const paymentresult = document.getElementById("paymentresult");
+
+mycheckbox.onclick = function seecheck(){
+    if(mycheckbox.checked){
+        subresult.textContent = 'subscribed';
+    }
+    else {
+        subresult.textContent = 'unsubscribed';
+    }
+}
+
+
+submitbtn.onclick = function() {
+    if (myvisabtn.checked){
+        paymentresult.textContent = 'Visa';
+    }
+    else if (mymastercardbtn.checked){
+        paymentresult.textContent = 'Mastercard';
+    }
+    else if (mypaypalbtn.checked){
+        paymentresult.textContent = 'Paypal';
+    }
+    else {
+        paymentresult.textContent = 'nuts';
+    }
+}

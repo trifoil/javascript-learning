@@ -4,7 +4,7 @@
 
 Declare variable and print into console
 
-```
+```js
 let y = 3.5;
 let x;
 x = 100;
@@ -14,19 +14,19 @@ window.alert(`alert!`);
 ```
 
 Print into the element which id is "myH1" text content
-```
+```js
 document.getElementById("myH1").textContent = `Hi`
 ```
 
 Print into the element which id is "myP" text content with the variable "age"
-```
+```js
 document.getElementById("myP").textContent = `you are ${age} years old`
 ```
 
 
 ## Arithmetic operands
 
-```
+```js
 students = students + 1;    // plus
 students = students - 1;    // minus
 students = students * 2;    // times
@@ -46,21 +46,21 @@ students --;                // -1
 ## User input
 
 First option
-```
+```js
 let username = window.prompt("Enter name");
 console.log(username);
 ```
 
 Second option       
 html : 
-```
+```js
 <h1 id="myH1">Welcome</h1>
 <label>Username : </label><br>
 <input id="myText"><br>
 <button id="mySubmit">submit</button>
 ```
 js : 
-```
+```js
 let username;
 
 document.getElementById("mySubmit").onclick = function(){
@@ -73,7 +73,7 @@ document.getElementById("mySubmit").onclick = function(){
 ## Type conversion
 
 String to number, boolean, string
-```
+```js
 x=Number(x);
 x=Boolean(x);
 x=String(x);
@@ -82,18 +82,18 @@ x=String(x);
 ## Const
 
 Instead of 
-```
+```js
 let pi;
 ```
 
 Write 
-```
+```js
 const PI;
 ```
 
 ## Count
 
-```
+```js
 const DISPLAY = document.getElementById("display");
 const RM = document.getElementById("removeButton");
 const ADD = document.getElementById("addButton");
@@ -121,7 +121,7 @@ RST.onclick = function() {
 
 ## Math objects
 
-```
+```js
 console.log(Math.PI)        //pi
 console.log(Math.E)         //euler
 z = Math.round(x);          //round closest
@@ -141,19 +141,19 @@ let min = Math.min(x,y,z);
 ## Random
 
 Between 1 and 100 
-```
+```js
 let randomN = Math.ceil(Math.random()*100);
 ```
 
 Between MIN and MAX
-```
+```js
 const MIN = 50;
 const MAX = 100;
 let randomN = Math.ceil(Math.random()*(MAX-MIN))+MIN;
 ```
 
 Full code 
-```
+```js
 const MIN = 50;
 const MAX = 100;
 const myButton = document.getElementById("b");
@@ -170,14 +170,14 @@ myButton.onclick = function(){
 ## Time
 
 To get the now time
-```
+```js
 let today = new Date();
 let hour = today.getHours();
 ```
 
 ## if statements
 
-```
+```js
 if (){
 }
 else if (){
@@ -188,7 +188,7 @@ else {
 
 ## Logical operators
 
-```
+```js
 &&      //AND
 ||      //OR
 !       //NOT
@@ -196,12 +196,22 @@ else {
 
 ## Checked property
 
-```
-  
-
+```js
+mycheckbox.onclick = function seecheck(){
+    if(mycheckbox.checked){
+        subresult.textContent = 'subscribed';
+    }
+    else {
+        subresult.textContent = 'unsubscribed';
+    }
+}
 ```
 
 ## Ternary operator
+
+```
+
+```
 ## Switches
 ## String methods
 ## String slicing
