@@ -255,6 +255,20 @@ switch (true){
 console.log(j);
 ```
 
+Also, the first condition checked breaks the switch :
+```js
+let i = 7;
+let j = '';
+switch (true){
+    case i > 4:
+        j = 'B';
+        break;
+    case i > 6:
+        j = 'A';
+        break;
+}
+console.log(j);
+```
 ## String methods
 
 ```js

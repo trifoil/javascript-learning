@@ -75,17 +75,14 @@
 // sound = cat ? "meow" : "woof";
 // console.log(sound);
 
-let i = 6;
+let i = 7;
 let j = '';
 switch (true){
-    case i < 6:
-        j = 'i is smaller than 6';
+    case i > 4:
+        j = 'B';
         break;
     case i > 6:
-        j = 'i is bigger than 6';
-        break;
-    default : 
-        j = 'i is 6';
+        j = 'A';
         break;
 }
 console.log(j);
