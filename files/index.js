@@ -75,16 +75,17 @@
 // sound = cat ? "meow" : "woof";
 // console.log(sound);
 
-
-let day = 1;
-let result = '';
-switch(day){
-    case 1 : 
-        result = 'lundi';
+let i = 6;
+let j = '';
+switch (true){
+    case i < 6:
+        j = 'i is smaller than 6';
         break;
-
-    case 2 : 
-        result = 'mardi'
+    case i > 6:
+        j = 'i is bigger than 6';
         break;
-    }   
-console.log(result)
+    default : 
+        j = 'i is 6';
+        break;
+}
+console.log(j);

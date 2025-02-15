@@ -229,70 +229,280 @@ switch(day){
         break;
 
     case 2 : 
-        result = 'mardi'
+        result = 'mardi';
         break;
+    default : 
+        result = 'wrong input';
     }   
 console.log(result)
 ```
+
+Can also evaluate expressions :
+```js
+let i = 6;
+let j = '';
+switch (true){
+    case i < 6:
+        j = 'i is smaller than 6';
+        break;
+    case i > 6:
+        j = 'i is bigger than 6';
+        break;
+    default : 
+        j = 'i is 6';
+        break;
+}
+console.log(j);
+```
+
 ## String methods
+
+```js
+
+```
+
 ## String slicing
+
+```js
+
+```
 ## Method chaining
+```js
+
+```
 ## Logical operators
+```js
+
+```
 ## Strict equality
+
+```js
+
+```
 ## While loops
+```js
+
+```
 ## For loops
+```js
+
+```
 ## Number guessing game
+```js
+
+```
 ## Functions
+```js
+
+```
 ## Variable scope
+```js
+
+```
 ## Temperature conversion program
+```js
+
+```
 ## Arrays
+```js
+
+```
 ## Spread operator
+```js
+
+```
 ## Rest parameters
+```js
+
+```
 ## Dice Roller program
+```js
+
+```
 ## Random password generator
+```js
+
+```
 ## Callbacks
+```js
+
+```
 ## forEach()
+```js
+
+```
 ## map()
-## filter()
+```js
+
+```## filter()
+
+```js
+
+```
 ## vreduce()
+```js
+
+```
 ## Function expressions
+```js
+
+```
 ## Arrow functions
+```js
+
+```
 ## JavaScript Objects
+```js
+
+```
 ## What is THIS
+```js
+
+```
 ## Constructors
+```js
+
+```
 ## Classes
+```js
+
+```
 ## STATIC keyword
+```js
+
+```
 ## Inheritance
+
+```js
+
+```
 ## SUPER keyword 
+
+```js
+
+```
 ## Getters & Setters
+```js
+
+```
 ## Destructuring
+```js
+
+```
 ## Nested objects
+```js
+
+```
 ## Arrays of objects
+```js
+
+```
 ## Sorting
+```js
+
+```
 ## Shuffle an array
+```js
+
+```
 ## Dates
+```js
+
+```
 ## Closures
+```js
+
+```
 ## setTimeout()
+```js
+
+```
 ## Digital Clock program
+```js
+
+```
 ## Stopwatch program
+```js
+
+```
 ## ES6 Modules
+```js
+
+```
 ## Asynchronous code
+```js
+
+```
 ## Error handling
+```js
+
+```
 ## Calculator program
+```js
+
+```
 ## What is the DOM?
+```js
+
+```
 ## Element selectors
+```js
+
+```
 ## DOM navigation
+```js
+
+```
 ## Add & change HTML
+```js
+
+```
 ## Mouse events
+```js
+
+```
 ## Key events
+```js
+
+```
 ## Hide/show HTML
+```js
+
+```
 ## NodeLists
+```js
+
+```
 ## classList
+```js
+
+```
 ## Rock Paper Scissors
+```js
+
+```
 ## Image Slider
+```js
+
+```
 ## Callback Hell?
+```js
+
+```
 ## Promises
+```js
+
+```
 ## Async/Await
+```js
+
+```
 ## JSON files
+```js
+
+```
 ## Fetch data from an API
+```js
+
+```
 ## Weather App project
