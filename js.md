@@ -198,7 +198,7 @@ else {
 
 ```js
 mycheckbox.onclick = function seecheck(){
-    if(mycheckbox.checked){
+    if (mycheckbox.checked) {
         subresult.textContent = 'subscribed';
     }
     else {
@@ -209,10 +209,31 @@ mycheckbox.onclick = function seecheck(){
 
 ## Ternary operator
 
-```
+```js
+let time = 6;
+let greeting = time <= 12 ? "good morning" : "good afternoon";
+console.log(greeting); // outputs "good morning"
 
+let cat = true;
+sound = cat ? "meow" : "woof";
+console.log(sound); // outputs "meow"
 ```
 ## Switches
+
+```js
+let day = 1;
+let result = '';
+switch(day){
+    case 1 : 
+        result = 'lundi';
+        break;
+
+    case 2 : 
+        result = 'mardi'
+        break;
+    }   
+console.log(result)
+```
 ## String methods
 ## String slicing
 ## Method chaining
