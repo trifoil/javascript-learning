@@ -75,14 +75,32 @@
 // sound = cat ? "meow" : "woof";
 // console.log(sound);
 
-let i = 7;
-let j = '';
-switch (true){
-    case i > 4:
-        j = 'B';
-        break;
-    case i > 6:
-        j = 'A';
-        break;
-}
-console.log(j);
+// let i = 7;
+// let j = '';
+// switch (true){
+//     case i > 4:
+//         j = 'B';
+//         break;
+//     case i > 6:
+//         j = 'A';
+//         break;
+// }
+// console.log(j);
+
+
+let monStringEnCriss = '   coCa cola  ';
+console.log(monStringEnCriss);
+console.log(monStringEnCriss.charAt(4));
+console.log(monStringEnCriss.indexOf('a'));
+console.log(monStringEnCriss.lastIndexOf('a')); 
+console.log(monStringEnCriss.length);
+console.log(monStringEnCriss.trim());
+console.log(monStringEnCriss.length);
+console.log(monStringEnCriss.toUpperCase());
+console.log(monStringEnCriss.toLowerCase());
+console.log(monStringEnCriss.repeat(3));
+let condition = monStringEnCriss.startsWith(" ");
+console.log(condition);
+condition = monStringEnCriss.includes("c")
+console.log(condition);
+console.log(monStringEnCriss.replaceAll("c", "b"))

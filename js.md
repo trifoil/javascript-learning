@@ -272,7 +272,15 @@ console.log(j);
 ## String methods
 
 ```js
-
+let monStringEnCriss = '   coca cola  ';                 
+console.log(monStringEnCriss.charAt(0));            // display the char at index 0
+console.log(monStringEnCriss.indexOf('a'));         // display the index of the first 'a' char
+console.log(monStringEnCriss.lastIndexOf('a'));     // display the index of the last 'a' char 
+console.log(monStringEnCriss.length);               // display the string length
+monStringEnCriss = monStringEnCriss.trim();         // trim both ends of the string
+console.log(monStringEnCriss);                      // display the string 
+console.log(monStringEnCriss.length);               // display the string length
+console.log(monStringEnCriss.toUpperCase());  // set the whole string uppercase
 ```
 
 ## String slicing
