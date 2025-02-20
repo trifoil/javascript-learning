@@ -88,19 +88,30 @@
 // console.log(j);
 
 
-let monStringEnCriss = '   coCa cola  ';
-console.log(monStringEnCriss);
-console.log(monStringEnCriss.charAt(4));
-console.log(monStringEnCriss.indexOf('a'));
-console.log(monStringEnCriss.lastIndexOf('a')); 
-console.log(monStringEnCriss.length);
-console.log(monStringEnCriss.trim());
-console.log(monStringEnCriss.length);
-console.log(monStringEnCriss.toUpperCase());
-console.log(monStringEnCriss.toLowerCase());
-console.log(monStringEnCriss.repeat(3));
-let condition = monStringEnCriss.startsWith(" ");
-console.log(condition);
-condition = monStringEnCriss.includes("c")
-console.log(condition);
-console.log(monStringEnCriss.replaceAll("c", "b"))
+// let monStringEnCriss = '   coCa cola  ';
+// console.log(monStringEnCriss);
+// console.log(monStringEnCriss.charAt(4));
+// console.log(monStringEnCriss.indexOf('a'));
+// console.log(monStringEnCriss.lastIndexOf('a')); 
+// console.log(monStringEnCriss.length);
+// console.log(monStringEnCriss.trim());
+// console.log(monStringEnCriss.length);
+// console.log(monStringEnCriss.toUpperCase());
+// console.log(monStringEnCriss.toLowerCase());
+// console.log(monStringEnCriss.repeat(3));
+// let condition = monStringEnCriss.startsWith(" ");
+// console.log(condition);
+// condition = monStringEnCriss.includes("c");
+// console.log(condition);
+// console.log(monStringEnCriss.replaceAll("c", "b"));
+// console.log(monStringEnCriss.padStart(20, "x"));
+// console.log(monStringEnCriss.padEnd(20, "x"));
+
+
+// let myString = "abcdefghij";
+// console.log(myString.slice(2,4));   //returns "cd"
+// console.log(myString.slice(4));     //returns what is after the n char
+// console.log(myString.slice(-2));    //negative takes the n char from the end
+
+let username = window.prompt("Enter your username");
+console.log(username);

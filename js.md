@@ -272,24 +272,42 @@ console.log(j);
 ## String methods
 
 ```js
-let monStringEnCriss = '   coca cola  ';                 
-console.log(monStringEnCriss.charAt(0));            // display the char at index 0
-console.log(monStringEnCriss.indexOf('a'));         // display the index of the first 'a' char
-console.log(monStringEnCriss.lastIndexOf('a'));     // display the index of the last 'a' char 
-console.log(monStringEnCriss.length);               // display the string length
-monStringEnCriss = monStringEnCriss.trim();         // trim both ends of the string
-console.log(monStringEnCriss);                      // display the string 
-console.log(monStringEnCriss.length);               // display the string length
-console.log(monStringEnCriss.toUpperCase());  // set the whole string uppercase
+let myString = '   coca cola  ';                 
+console.log(myString.charAt(0));            // display the char at index 0
+console.log(myString.indexOf('a'));         // display the index of the first 'a' char
+console.log(myString.lastIndexOf('a'));     // display the index of the last 'a' char 
+console.log(myString.length);               // display the string length
+myString = myString.trim();                 // trim both ends of the string
+console.log(myString);                      // display the string 
+console.log(myString.length);               // display the string length
+console.log(myString.toUpperCase());        // set the whole string uppercase
+console.log(myString.toLowerCase());
+console.log(myString.repeat(3));
+let condition = myString.startsWith(" ");
+console.log(condition);
+condition = myString.includes("c");
+console.log(condition);
+console.log(myString.replaceAll("c", "b"));
+console.log(myString.padStart(15, "x"));
+console.log(myString.padEnd(15, "x"));
 ```
 
 ## String slicing
 
 ```js
-
+let myString = "abcdefghij";
+console.log(myString.slice(2,4));   //returns "cd"
+console.log(myString.slice(4));     //returns what is after the n char
+console.log(myString.slice(-2));    //negative takes the n char from the end
 ```
 ## Method chaining
 ```js
+//---no method chaining---
+
+
+
+//---chaining method---
+
 
 ```
 ## Logical operators
