@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow - Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .exercise h3 {
+            color: #333;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 10px;
+        }
+        .exercise p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .solution {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+        .solution.show {
+            display: block;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .interactive {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Control Flow - Exercises</h1>
+    
+    <div class="exercise">
+        <h3>Exercise 1: If Statements</h3>
+        <p>Create a program that determines if a person can vote based on their age.</p>
+        <div class="code-block">
+            // TODO: Create a variable 'age' with a number
+            // TODO: Use if/else if/else to check:
+            //   - If age < 18: "Too young to vote"
+            //   - If age >= 18 and age < 65: "Can vote"
+            //   - If age >= 65: "Senior voter"
+            // TODO: Print the result using console.log()
+        </div>
+        <button onclick="showSolution(1)">Show Solution</button>
+        <div id="solution1" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let age = 25;
+
+if (age < 18) {
+    console.log("Too young to vote");
+} else if (age >= 18 && age < 65) {
+    console.log("Can vote");
+} else {
+    console.log("Senior voter");
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 2: Switch Statement</h3>
+        <p>Create a program that converts numbers to day names.</p>
+        <div class="code-block">
+            // TODO: Create a variable 'dayNumber' with a number (1-7)
+            // TODO: Use switch statement to convert:
+            //   1 = "Monday", 2 = "Tuesday", 3 = "Wednesday"
+            //   4 = "Thursday", 5 = "Friday", 6 = "Saturday", 7 = "Sunday"
+            //   default = "Invalid day"
+            // TODO: Print the day name using console.log()
+        </div>
+        <button onclick="showSolution(2)">Show Solution</button>
+        <div id="solution2" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let dayNumber = 3;
+let dayName;
+
+switch(dayNumber) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    case 4:
+        dayName = "Thursday";
+        break;
+    case 5:
+        dayName = "Friday";
+        break;
+    case 6:
+        dayName = "Saturday";
+        break;
+    case 7:
+        dayName = "Sunday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+
+console.log(dayName);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 3: While Loop</h3>
+        <p>Create a countdown program using a while loop.</p>
+        <div class="code-block">
+            // TODO: Create a variable 'countdown' starting at 10
+            // TODO: Use while loop to count down from 10 to 1
+            // TODO: Print each number using console.log()
+            // TODO: After the loop, print "Blast off!"
+        </div>
+        <button onclick="showSolution(3)">Show Solution</button>
+        <div id="solution3" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let countdown = 10;
+
+while (countdown > 0) {
+    console.log(countdown);
+    countdown--;
+}
+
+console.log("Blast off!");
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 4: For Loop</h3>
+        <p>Calculate the sum of numbers from 1 to 100 using a for loop.</p>
+        <div class="code-block">
+            // TODO: Create a variable 'sum' starting at 0
+            // TODO: Use for loop to iterate from 1 to 100
+            // TODO: Add each number to the sum
+            // TODO: Print the final sum using console.log()
+        </div>
+        <button onclick="showSolution(4)">Show Solution</button>
+        <div id="solution4" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let sum = 0;
+
+for (let i = 1; i <= 100; i++) {
+    sum += i;
+}
+
+console.log("Sum of numbers from 1 to 100:", sum);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 5: Interactive Number Guessing Game</h3>
+        <p>Create a simple number guessing game.</p>
+        <div class="interactive">
+            <input type="number" id="guessInput" placeholder="Enter your guess (1-10)">
+            <button onclick="checkGuess()">Check Guess</button>
+            <p id="gameResult"></p>
+            <button onclick="newGame()">New Game</button>
+        </div>
+        <div class="code-block">
+            // TODO: Generate a random number between 1 and 10
+            // TODO: Get user input (you can use prompt() or DOM)
+            // TODO: Compare the guess with the random number
+            // TODO: Give feedback: "Too high", "Too low", or "Correct!"
+            // TODO: Keep track of attempts
+        </div>
+        <button onclick="showSolution(5)">Show Solution</button>
+        <div id="solution5" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let targetNumber = Math.floor(Math.random() * 10) + 1;
+let attempts = 0;
+
+function checkGuess() {
+    let guess = parseInt(document.getElementById("guessInput").value);
+    attempts++;
+    
+    if (guess < targetNumber) {
+        document.getElementById("gameResult").textContent = "Too low!";
+    } else if (guess > targetNumber) {
+        document.getElementById("gameResult").textContent = "Too high!";
+    } else {
+        document.getElementById("gameResult").textContent = 
+            "Correct! It took you " + attempts + " attempts.";
+    }
+}
+
+function newGame() {
+    targetNumber = Math.floor(Math.random() * 10) + 1;
+    attempts = 0;
+    document.getElementById("guessInput").value = "";
+    document.getElementById("gameResult").textContent = "";
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 6: Logical Operators</h3>
+        <p>Practice using logical operators (&&, ||, !).</p>
+        <div class="code-block">
+            // TODO: Create variables: 'age' (number), 'hasLicense' (boolean), 'hasCar' (boolean)
+            // TODO: Check if person can drive (age >= 16 AND hasLicense)
+            // TODO: Check if person can get a discount (age >= 65 OR age <= 12)
+            // TODO: Check if person is NOT a teenager (age < 13 OR age > 19)
+            // TODO: Print all results using console.log()
+        </div>
+        <button onclick="showSolution(6)">Show Solution</button>
+        <div id="solution6" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let age = 25;
+let hasLicense = true;
+let hasCar = false;
+
+let canDrive = age >= 16 && hasLicense;
+let canGetDiscount = age >= 65 || age <= 12;
+let isNotTeenager = age < 13 || age > 19;
+
+console.log("Can drive:", canDrive);
+console.log("Can get discount:", canGetDiscount);
+console.log("Is not teenager:", isNotTeenager);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 7: Temperature Converter</h3>
+        <p>Create a temperature conversion program with user input.</p>
+        <div class="interactive">
+            <input type="number" id="tempInput" placeholder="Enter temperature">
+            <select id="conversionType">
+                <option value="c2f">Celsius to Fahrenheit</option>
+                <option value="f2c">Fahrenheit to Celsius</option>
+            </select>
+            <button onclick="convertTemperature()">Convert</button>
+            <p id="tempResult"></p>
+        </div>
+        <div class="code-block">
+            // TODO: Get temperature value from input
+            // TODO: Get conversion type from select
+            // TODO: Use if/else to handle both conversions:
+            //   Celsius to Fahrenheit: (C * 9/5) + 32
+            //   Fahrenheit to Celsius: (F - 32) * 5/9
+            // TODO: Display the result
+        </div>
+        <button onclick="showSolution(7)">Show Solution</button>
+        <div id="solution7" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function convertTemperature() {
+    let temp = parseFloat(document.getElementById("tempInput").value);
+    let conversionType = document.getElementById("conversionType").value;
+    let result;
+    
+    if (conversionType === "c2f") {
+        result = (temp * 9/5) + 32;
+        document.getElementById("tempResult").textContent = 
+            temp + "°C = " + result.toFixed(1) + "°F";
+    } else {
+        result = (temp - 32) * 5/9;
+        document.getElementById("tempResult").textContent = 
+            temp + "°F = " + result.toFixed(1) + "°C";
+    }
+}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSolution(exerciseNumber) {
+            const solution = document.getElementById(`solution${exerciseNumber}`);
+            solution.classList.toggle('show');
+        }
+
+        // Initialize the number guessing game
+        let targetNumber = Math.floor(Math.random() * 10) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            let guess = parseInt(document.getElementById("guessInput").value);
+            attempts++;
+            
+            if (guess < targetNumber) {
+                document.getElementById("gameResult").textContent = "Too low!";
+            } else if (guess > targetNumber) {
+                document.getElementById("gameResult").textContent = "Too high!";
+            } else {
+                document.getElementById("gameResult").textContent = 
+                    "Correct! It took you " + attempts + " attempts.";
+            }
+        }
+
+        function newGame() {
+            targetNumber = Math.floor(Math.random() * 10) + 1;
+            attempts = 0;
+            document.getElementById("guessInput").value = "";
+            document.getElementById("gameResult").textContent = "";
+        }
+
+        function convertTemperature() {
+            let temp = parseFloat(document.getElementById("tempInput").value);
+            let conversionType = document.getElementById("conversionType").value;
+            let result;
+            
+            if (conversionType === "c2f") {
+                result = (temp * 9/5) + 32;
+                document.getElementById("tempResult").textContent = 
+                    temp + "°C = " + result.toFixed(1) + "°F";
+            } else {
+                result = (temp - 32) * 5/9;
+                document.getElementById("tempResult").textContent = 
+                    temp + "°F = " + result.toFixed(1) + "°C";
+            }
+        }
+    </script>
+</body>
+</html> 

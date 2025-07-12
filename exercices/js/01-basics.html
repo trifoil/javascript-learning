@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics - Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .exercise h3 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .exercise p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .solution {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+        .solution.show {
+            display: block;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .output {
+            background: #e9ecef;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Basics - Exercises</h1>
+    
+    <div class="exercise">
+        <h3>Exercise 1: Variables and Console Output</h3>
+        <p>Create variables and use console.log() to output information.</p>
+        <div class="code-block">
+            // TODO: Create a variable called 'name' with your name
+            // TODO: Create a variable called 'age' with your age
+            // TODO: Create a variable called 'city' with your city
+            // TODO: Use console.log() to print: "Hello, my name is [name]"
+            // TODO: Use console.log() to print: "I am [age] years old"
+            // TODO: Use console.log() to print: "I live in [city]"
+        </div>
+        <button onclick="showSolution(1)">Show Solution</button>
+        <div id="solution1" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let name = "John";
+let age = 25;
+let city = "New York";
+
+console.log("Hello, my name is " + name);
+console.log("I am " + age + " years old");
+console.log("I live in " + city);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 2: Arithmetic Operations</h3>
+        <p>Practice basic arithmetic operations with variables.</p>
+        <div class="code-block">
+            // TODO: Create two variables 'a' and 'b' with numbers
+            // TODO: Calculate and store the sum in a variable called 'sum'
+            // TODO: Calculate and store the difference in a variable called 'difference'
+            // TODO: Calculate and store the product in a variable called 'product'
+            // TODO: Calculate and store the quotient in a variable called 'quotient'
+            // TODO: Calculate and store the remainder in a variable called 'remainder'
+            // TODO: Print all results using console.log()
+        </div>
+        <button onclick="showSolution(2)">Show Solution</button>
+        <div id="solution2" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let a = 15;
+let b = 4;
+
+let sum = a + b;
+let difference = a - b;
+let product = a * b;
+let quotient = a / b;
+let remainder = a % b;
+
+console.log("Sum:", sum);
+console.log("Difference:", difference);
+console.log("Product:", product);
+console.log("Quotient:", quotient);
+console.log("Remainder:", remainder);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 3: User Input and DOM Manipulation</h3>
+        <p>Create a simple form that takes user input and displays it.</p>
+        <div class="code-block">
+            // TODO: Create an HTML form with an input field and a button
+            // TODO: When the button is clicked, get the value from the input
+            // TODO: Display the input value in a paragraph element
+            // TODO: Clear the input field after displaying the value
+        </div>
+        <button onclick="showSolution(3)">Show Solution</button>
+        <div id="solution3" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+&lt;input type="text" id="userInput" placeholder="Enter your name"&gt;
+&lt;button onclick="displayInput()"&gt;Submit&lt;/button&gt;
+&lt;p id="output"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function displayInput() {
+    let userInput = document.getElementById("userInput").value;
+    document.getElementById("output").textContent = "Hello, " + userInput + "!";
+    document.getElementById("userInput").value = "";
+}
+&lt;/script&gt;
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 4: Type Conversion</h3>
+        <p>Practice converting between different data types.</p>
+        <div class="code-block">
+            // TODO: Create a string variable 'numberString' with value "42"
+            // TODO: Convert it to a number and store in 'number'
+            // TODO: Create a number variable 'ageNumber' with value 25
+            // TODO: Convert it to a string and store in 'ageString'
+            // TODO: Create a string variable 'truthString' with value "true"
+            // TODO: Convert it to a boolean and store in 'truth'
+            // TODO: Print all variables and their types using console.log()
+        </div>
+        <button onclick="showSolution(4)">Show Solution</button>
+        <div id="solution4" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let numberString = "42";
+let number = Number(numberString);
+
+let ageNumber = 25;
+let ageString = String(ageNumber);
+
+let truthString = "true";
+let truth = Boolean(truthString);
+
+console.log("Original string:", numberString, typeof numberString);
+console.log("Converted number:", number, typeof number);
+console.log("Original number:", ageNumber, typeof ageNumber);
+console.log("Converted string:", ageString, typeof ageString);
+console.log("Original string:", truthString, typeof truthString);
+console.log("Converted boolean:", truth, typeof truth);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 5: Math Operations</h3>
+        <p>Use Math object methods to perform calculations.</p>
+        <div class="code-block">
+            // TODO: Create a variable 'decimal' with value 3.7
+            // TODO: Round it to the nearest integer using Math.round()
+            // TODO: Round it up using Math.ceil()
+            // TODO: Round it down using Math.floor()
+            // TODO: Calculate the square root of 16 using Math.sqrt()
+            // TODO: Calculate 2 to the power of 8 using Math.pow()
+            // TODO: Find the absolute value of -15 using Math.abs()
+            // TODO: Print all results using console.log()
+        </div>
+        <button onclick="showSolution(5)">Show Solution</button>
+        <div id="solution5" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let decimal = 3.7;
+
+let rounded = Math.round(decimal);
+let roundedUp = Math.ceil(decimal);
+let roundedDown = Math.floor(decimal);
+let squareRoot = Math.sqrt(16);
+let power = Math.pow(2, 8);
+let absolute = Math.abs(-15);
+
+console.log("Original:", decimal);
+console.log("Rounded:", rounded);
+console.log("Rounded up:", roundedUp);
+console.log("Rounded down:", roundedDown);
+console.log("Square root of 16:", squareRoot);
+console.log("2 to the power of 8:", power);
+console.log("Absolute value of -15:", absolute);
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSolution(exerciseNumber) {
+            const solution = document.getElementById(`solution${exerciseNumber}`);
+            solution.classList.toggle('show');
+        }
+    </script>
+</body>
+</html> 

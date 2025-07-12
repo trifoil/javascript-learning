@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions & Arrays - Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .exercise h3 {
+            color: #333;
+            border-bottom: 2px solid #dc3545;
+            padding-bottom: 10px;
+        }
+        .exercise p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .solution {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+        .solution.show {
+            display: block;
+        }
+        button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #c82333;
+        }
+        .interactive {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .array-display {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Functions & Arrays - Exercises</h1>
+    
+    <div class="exercise">
+        <h3>Exercise 1: Basic Functions</h3>
+        <p>Create functions to perform basic calculations.</p>
+        <div class="code-block">
+            // TODO: Create a function called 'add' that takes two parameters and returns their sum
+            // TODO: Create a function called 'multiply' that takes two parameters and returns their product
+            // TODO: Create a function called 'greet' that takes a name parameter and returns "Hello, [name]!"
+            // TODO: Test all functions and print results using console.log()
+        </div>
+        <button onclick="showSolution(1)">Show Solution</button>
+        <div id="solution1" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function add(a, b) {
+    return a + b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+console.log(add(5, 3));        // 8
+console.log(multiply(4, 2));   // 8
+console.log(greet("Alice"));   // "Hello, Alice!"
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 2: Array Operations</h3>
+        <p>Practice basic array operations.</p>
+        <div class="code-block">
+            // TODO: Create an array called 'fruits' with 5 fruit names
+            // TODO: Add a new fruit to the end using push()
+            // TODO: Add a new fruit to the beginning using unshift()
+            // TODO: Remove the last fruit using pop()
+            // TODO: Remove the first fruit using shift()
+            // TODO: Print the array after each operation
+        </div>
+        <button onclick="showSolution(2)">Show Solution</button>
+        <div id="solution2" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let fruits = ["apple", "banana", "orange", "grape", "kiwi"];
+console.log("Original:", fruits);
+
+fruits.push("mango");
+console.log("After push:", fruits);
+
+fruits.unshift("strawberry");
+console.log("After unshift:", fruits);
+
+fruits.pop();
+console.log("After pop:", fruits);
+
+fruits.shift();
+console.log("After shift:", fruits);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 3: Array Methods (forEach, map, filter)</h3>
+        <p>Practice using array methods to manipulate data.</p>
+        <div class="code-block">
+            // TODO: Create an array of numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            // TODO: Use forEach to print each number doubled
+            // TODO: Use map to create a new array with all numbers squared
+            // TODO: Use filter to create a new array with only even numbers
+            // TODO: Print all results using console.log()
+        </div>
+        <button onclick="showSolution(3)">Show Solution</button>
+        <div id="solution3" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log("Original array:", numbers);
+
+// forEach - print doubled numbers
+console.log("Doubled numbers:");
+numbers.forEach(number => {
+    console.log(number * 2);
+});
+
+// map - create squared array
+let squared = numbers.map(number => number ** 2);
+console.log("Squared array:", squared);
+
+// filter - create even numbers array
+let evens = numbers.filter(number => number % 2 === 0);
+console.log("Even numbers:", evens);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 4: Interactive Array Manager</h3>
+        <p>Create an interactive tool to manage an array.</p>
+        <div class="interactive">
+            <input type="text" id="arrayInput" placeholder="Enter a word">
+            <button onclick="addToArray()">Add to Array</button>
+            <button onclick="removeFromArray()">Remove Last</button>
+            <button onclick="clearArray()">Clear Array</button>
+            <button onclick="sortArray()">Sort Array</button>
+            <div class="array-display" id="arrayDisplay">Array: []</div>
+        </div>
+        <div class="code-block">
+            // TODO: Create an empty array to store words
+            // TODO: Function to add word to array
+            // TODO: Function to remove last word from array
+            // TODO: Function to clear the entire array
+            // TODO: Function to sort the array alphabetically
+            // TODO: Function to display the current array
+        </div>
+        <button onclick="showSolution(4)">Show Solution</button>
+        <div id="solution4" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let wordArray = [];
+
+function addToArray() {
+    let word = document.getElementById("arrayInput").value;
+    if (word.trim() !== "") {
+        wordArray.push(word);
+        document.getElementById("arrayInput").value = "";
+        displayArray();
+    }
+}
+
+function removeFromArray() {
+    wordArray.pop();
+    displayArray();
+}
+
+function clearArray() {
+    wordArray = [];
+    displayArray();
+}
+
+function sortArray() {
+    wordArray.sort();
+    displayArray();
+}
+
+function displayArray() {
+    document.getElementById("arrayDisplay").textContent = 
+        "Array: [" + wordArray.join(", ") + "]";
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 5: Calculator Function</h3>
+        <p>Create a calculator function that can perform different operations.</p>
+        <div class="interactive">
+            <input type="number" id="calcNum1" placeholder="First number">
+            <select id="calcOperation">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">×</option>
+                <option value="divide">÷</option>
+            </select>
+            <input type="number" id="calcNum2" placeholder="Second number">
+            <button onclick="calculate()">Calculate</button>
+            <p id="calcResult"></p>
+        </div>
+        <div class="code-block">
+            // TODO: Create a function called 'calculator' that takes three parameters:
+            //   - num1: first number
+            //   - num2: second number  
+            //   - operation: string ('add', 'subtract', 'multiply', 'divide')
+            // TODO: Use switch statement to perform the correct operation
+            // TODO: Return the result
+            // TODO: Handle division by zero
+        </div>
+        <button onclick="showSolution(5)">Show Solution</button>
+        <div id="solution5" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function calculator(num1, num2, operation) {
+    switch(operation) {
+        case 'add':
+            return num1 + num2;
+        case 'subtract':
+            return num1 - num2;
+        case 'multiply':
+            return num1 * num2;
+        case 'divide':
+            if (num2 === 0) {
+                return "Error: Division by zero";
+            }
+            return num1 / num2;
+        default:
+            return "Error: Invalid operation";
+    }
+}
+
+function calculate() {
+    let num1 = parseFloat(document.getElementById("calcNum1").value);
+    let num2 = parseFloat(document.getElementById("calcNum2").value);
+    let operation = document.getElementById("calcOperation").value;
+    
+    let result = calculator(num1, num2, operation);
+    document.getElementById("calcResult").textContent = "Result: " + result;
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 6: Array of Objects</h3>
+        <p>Work with an array of objects representing students.</p>
+        <div class="code-block">
+            // TODO: Create an array of student objects with properties: name, age, grade
+            // TODO: Use forEach to print each student's information
+            // TODO: Use filter to find students with grade >= 80
+            // TODO: Use map to create an array of just student names
+            // TODO: Use reduce to calculate the average grade
+        </div>
+        <button onclick="showSolution(6)">Show Solution</button>
+        <div id="solution6" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let students = [
+    {name: "Alice", age: 20, grade: 85},
+    {name: "Bob", age: 19, grade: 92},
+    {name: "Charlie", age: 21, grade: 78},
+    {name: "Diana", age: 20, grade: 88},
+    {name: "Eve", age: 22, grade: 95}
+];
+
+// forEach - print all students
+console.log("All students:");
+students.forEach(student => {
+    console.log(`${student.name} (${student.age} years old) - Grade: ${student.grade}`);
+});
+
+// filter - high achievers
+let highAchievers = students.filter(student => student.grade >= 80);
+console.log("High achievers:", highAchievers);
+
+// map - just names
+let names = students.map(student => student.name);
+console.log("Student names:", names);
+
+// reduce - average grade
+let totalGrade = students.reduce((sum, student) => sum + student.grade, 0);
+let averageGrade = totalGrade / students.length;
+console.log("Average grade:", averageGrade.toFixed(2));
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 7: Password Generator</h3>
+        <p>Create a function to generate random passwords.</p>
+        <div class="interactive">
+            <input type="number" id="passwordLength" placeholder="Password length" value="8" min="4" max="20">
+            <button onclick="generatePassword()">Generate Password</button>
+            <p id="passwordResult"></p>
+        </div>
+        <div class="code-block">
+            // TODO: Create a function called 'generatePassword' that takes a length parameter
+            // TODO: Create a string with all possible characters (letters, numbers, symbols)
+            // TODO: Use a for loop to randomly select characters
+            // TODO: Return the generated password
+            // TODO: Add input validation (minimum length)
+        </div>
+        <button onclick="showSolution(7)">Show Solution</button>
+        <div id="solution7" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function generatePassword(length) {
+    if (length < 4) {
+        return "Password must be at least 4 characters long";
+    }
+    
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    let password = "";
+    
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * chars.length);
+        password += chars.charAt(randomIndex);
+    }
+    
+    return password;
+}
+
+function generatePasswordUI() {
+    let length = parseInt(document.getElementById("passwordLength").value);
+    let password = generatePassword(length);
+    document.getElementById("passwordResult").textContent = "Generated password: " + password;
+}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSolution(exerciseNumber) {
+            const solution = document.getElementById(`solution${exerciseNumber}`);
+            solution.classList.toggle('show');
+        }
+
+        // Initialize array manager
+        let wordArray = [];
+
+        function addToArray() {
+            let word = document.getElementById("arrayInput").value;
+            if (word.trim() !== "") {
+                wordArray.push(word);
+                document.getElementById("arrayInput").value = "";
+                displayArray();
+            }
+        }
+
+        function removeFromArray() {
+            wordArray.pop();
+            displayArray();
+        }
+
+        function clearArray() {
+            wordArray = [];
+            displayArray();
+        }
+
+        function sortArray() {
+            wordArray.sort();
+            displayArray();
+        }
+
+        function displayArray() {
+            document.getElementById("arrayDisplay").textContent = 
+                "Array: [" + wordArray.join(", ") + "]";
+        }
+
+        function calculate() {
+            let num1 = parseFloat(document.getElementById("calcNum1").value);
+            let num2 = parseFloat(document.getElementById("calcNum2").value);
+            let operation = document.getElementById("calcOperation").value;
+            
+            let result = calculator(num1, num2, operation);
+            document.getElementById("calcResult").textContent = "Result: " + result;
+        }
+
+        function calculator(num1, num2, operation) {
+            switch(operation) {
+                case 'add':
+                    return num1 + num2;
+                case 'subtract':
+                    return num1 - num2;
+                case 'multiply':
+                    return num1 * num2;
+                case 'divide':
+                    if (num2 === 0) {
+                        return "Error: Division by zero";
+                    }
+                    return num1 / num2;
+                default:
+                    return "Error: Invalid operation";
+            }
+        }
+
+        function generatePassword() {
+            let length = parseInt(document.getElementById("passwordLength").value);
+            let password = generatePasswordFunc(length);
+            document.getElementById("passwordResult").textContent = "Generated password: " + password;
+        }
+
+        function generatePasswordFunc(length) {
+            if (length < 4) {
+                return "Password must be at least 4 characters long";
+            }
+            
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+            let password = "";
+            
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * chars.length);
+                password += chars.charAt(randomIndex);
+            }
+            
+            return password;
+        }
+    </script>
+</body>
+</html> 

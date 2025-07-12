@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & Events - Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .exercise h3 {
+            color: #333;
+            border-bottom: 2px solid #17a2b8;
+            padding-bottom: 10px;
+        }
+        .exercise p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .solution {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+        .solution.show {
+            display: block;
+        }
+        button {
+            background: #17a2b8;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #138496;
+        }
+        .interactive {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .demo-box {
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #333;
+            margin: 10px;
+            display: inline-block;
+        }
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM & Events - Exercises</h1>
+    
+    <div class="exercise">
+        <h3>Exercise 1: Basic DOM Selection</h3>
+        <p>Practice selecting and manipulating DOM elements.</p>
+        <div class="interactive">
+            <h4 id="demoTitle">This is a demo title</h4>
+            <p id="demoText">This is some demo text that we will manipulate.</p>
+            <button onclick="changeText()">Change Text</button>
+            <button onclick="changeColor()">Change Color</button>
+            <button onclick="hideElement()">Hide Element</button>
+            <button onclick="showElement()">Show Element</button>
+        </div>
+        <div class="code-block">
+            // TODO: Select the element with id "demoTitle"
+            // TODO: Change its text content to "New Title"
+            // TODO: Select the element with id "demoText"
+            // TODO: Change its color to red
+            // TODO: Hide the text element by setting display to "none"
+            // TODO: Show the text element by setting display to "block"
+        </div>
+        <button onclick="showSolution(1)">Show Solution</button>
+        <div id="solution1" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function changeText() {
+    let title = document.getElementById("demoTitle");
+    title.textContent = "New Title";
+}
+
+function changeColor() {
+    let text = document.getElementById("demoText");
+    text.style.color = "red";
+}
+
+function hideElement() {
+    let text = document.getElementById("demoText");
+    text.style.display = "none";
+}
+
+function showElement() {
+    let text = document.getElementById("demoText");
+    text.style.display = "block";
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 2: Creating and Adding Elements</h3>
+        <p>Practice creating new elements and adding them to the DOM.</p>
+        <div class="interactive">
+            <input type="text" id="newItemInput" placeholder="Enter item name">
+            <button onclick="addListItem()">Add to List</button>
+            <ul id="itemList"></ul>
+        </div>
+        <div class="code-block">
+            // TODO: Get the value from the input field
+            // TODO: Create a new li element
+            // TODO: Set the text content of the li to the input value
+            // TODO: Add the li element to the ul with id "itemList"
+            // TODO: Clear the input field after adding
+            // TODO: Add validation to prevent empty items
+        </div>
+        <button onclick="showSolution(2)">Show Solution</button>
+        <div id="solution2" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function addListItem() {
+    let input = document.getElementById("newItemInput");
+    let itemText = input.value.trim();
+    
+    if (itemText !== "") {
+        let list = document.getElementById("itemList");
+        let newItem = document.createElement("li");
+        newItem.textContent = itemText;
+        list.appendChild(newItem);
+        input.value = "";
+    } else {
+        alert("Please enter an item name!");
+    }
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 3: Event Listeners</h3>
+        <p>Practice adding event listeners to elements.</p>
+        <div class="interactive">
+            <div class="demo-box" id="eventBox">
+                <p>Hover over me, click me, or press keys!</p>
+            </div>
+            <p id="eventLog">Event log will appear here...</p>
+        </div>
+        <div class="code-block">
+            // TODO: Add a click event listener to the demo box
+            // TODO: Add a mouseenter event listener to change background color
+            // TODO: Add a mouseleave event listener to restore original color
+            // TODO: Add a keydown event listener to the document
+            // TODO: Log all events to the eventLog paragraph
+        </div>
+        <button onclick="showSolution(3)">Show Solution</button>
+        <div id="solution3" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let eventBox = document.getElementById("eventBox");
+let eventLog = document.getElementById("eventLog");
+
+eventBox.addEventListener("click", function() {
+    logEvent("Box was clicked!");
+});
+
+eventBox.addEventListener("mouseenter", function() {
+    this.style.backgroundColor = "#e3f2fd";
+    logEvent("Mouse entered the box");
+});
+
+eventBox.addEventListener("mouseleave", function() {
+    this.style.backgroundColor = "";
+    logEvent("Mouse left the box");
+});
+
+document.addEventListener("keydown", function(event) {
+    logEvent(`Key pressed: ${event.key}`);
+});
+
+function logEvent(message) {
+    eventLog.textContent = message;
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 4: Interactive Color Changer</h3>
+        <p>Create an interactive color changing tool.</p>
+        <div class="interactive">
+            <div class="color-box" id="colorBox"></div>
+            <input type="color" id="colorPicker" value="#ff0000">
+            <button onclick="changeBoxColor()">Apply Color</button>
+            <button onclick="randomColor()">Random Color</button>
+            <p id="colorInfo">Current color: #ff0000</p>
+        </div>
+        <div class="code-block">
+            // TODO: Get the color value from the color picker
+            // TODO: Apply the color to the color box background
+            // TODO: Update the color info text
+            // TODO: Create a function to generate random colors
+            // TODO: Apply random color when "Random Color" is clicked
+        </div>
+        <button onclick="showSolution(4)">Show Solution</button>
+        <div id="solution4" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function changeBoxColor() {
+    let colorPicker = document.getElementById("colorPicker");
+    let colorBox = document.getElementById("colorBox");
+    let colorInfo = document.getElementById("colorInfo");
+    
+    let selectedColor = colorPicker.value;
+    colorBox.style.backgroundColor = selectedColor;
+    colorInfo.textContent = `Current color: ${selectedColor}`;
+}
+
+function randomColor() {
+    let colorBox = document.getElementById("colorBox");
+    let colorInfo = document.getElementById("colorInfo");
+    
+    let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+    colorBox.style.backgroundColor = randomColor;
+    colorInfo.textContent = `Current color: ${randomColor}`;
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 5: Todo List Application</h3>
+        <p>Create a complete todo list with add, complete, and delete functionality.</p>
+        <div class="interactive">
+            <input type="text" id="todoInput" placeholder="Enter a new task">
+            <button onclick="addTodo()">Add Task</button>
+            <div id="todoList"></div>
+        </div>
+        <div class="code-block">
+            // TODO: Create an array to store todo items
+            // TODO: Function to add new todo items
+            // TODO: Function to mark items as complete
+            // TODO: Function to delete items
+            // TODO: Function to display all todos
+            // TODO: Add event listeners for complete and delete buttons
+        </div>
+        <button onclick="showSolution(5)">Show Solution</button>
+        <div id="solution5" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let todos = [];
+
+function addTodo() {
+    let input = document.getElementById("todoInput");
+    let text = input.value.trim();
+    
+    if (text !== "") {
+        let todo = {
+            id: Date.now(),
+            text: text,
+            completed: false
+        };
+        
+        todos.push(todo);
+        input.value = "";
+        displayTodos();
+    }
+}
+
+function toggleTodo(id) {
+    let todo = todos.find(t => t.id === id);
+    if (todo) {
+        todo.completed = !todo.completed;
+        displayTodos();
+    }
+}
+
+function deleteTodo(id) {
+    todos = todos.filter(t => t.id !== id);
+    displayTodos();
+}
+
+function displayTodos() {
+    let todoList = document.getElementById("todoList");
+    todoList.innerHTML = "";
+    
+    todos.forEach(todo => {
+        let todoItem = document.createElement("div");
+        todoItem.className = "todo-item";
+        if (todo.completed) {
+            todoItem.classList.add("completed");
+        }
+        
+        todoItem.innerHTML = `
+            <span>${todo.text}</span>
+            <div>
+                <button onclick="toggleTodo(${todo.id})">
+                    ${todo.completed ? 'Undo' : 'Complete'}
+                </button>
+                <button onclick="deleteTodo(${todo.id})">Delete</button>
+            </div>
+        `;
+        
+        todoList.appendChild(todoItem);
+    });
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 6: Form Validation</h3>
+        <p>Create a form with real-time validation.</p>
+        <div class="interactive">
+            <form id="validationForm">
+                <div>
+                    <label for="nameInput">Name:</label>
+                    <input type="text" id="nameInput" placeholder="Enter your name">
+                    <span id="nameError" style="color: red; display: none;"></span>
+                </div>
+                <div>
+                    <label for="emailInput">Email:</label>
+                    <input type="email" id="emailInput" placeholder="Enter your email">
+                    <span id="emailError" style="color: red; display: none;"></span>
+                </div>
+                <div>
+                    <label for="ageInput">Age:</label>
+                    <input type="number" id="ageInput" placeholder="Enter your age">
+                    <span id="ageError" style="color: red; display: none;"></span>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="formResult"></p>
+        </div>
+        <div class="code-block">
+            // TODO: Add input event listeners for real-time validation
+            // TODO: Validate name (not empty, at least 2 characters)
+            // TODO: Validate email (contains @ and .)
+            // TODO: Validate age (between 18 and 120)
+            // TODO: Show/hide error messages
+            // TODO: Prevent form submission if validation fails
+        </div>
+        <button onclick="showSolution(6)">Show Solution</button>
+        <div id="solution6" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let form = document.getElementById("validationForm");
+let nameInput = document.getElementById("nameInput");
+let emailInput = document.getElementById("emailInput");
+let ageInput = document.getElementById("ageInput");
+
+// Real-time validation
+nameInput.addEventListener("input", validateName);
+emailInput.addEventListener("input", validateEmail);
+ageInput.addEventListener("input", validateAge);
+
+function validateName() {
+    let name = nameInput.value.trim();
+    let error = document.getElementById("nameError");
+    
+    if (name.length < 2) {
+        error.textContent = "Name must be at least 2 characters long";
+        error.style.display = "block";
+        return false;
+    } else {
+        error.style.display = "none";
+        return true;
+    }
+}
+
+function validateEmail() {
+    let email = emailInput.value.trim();
+    let error = document.getElementById("emailError");
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(email)) {
+        error.textContent = "Please enter a valid email address";
+        error.style.display = "block";
+        return false;
+    } else {
+        error.style.display = "none";
+        return true;
+    }
+}
+
+function validateAge() {
+    let age = parseInt(ageInput.value);
+    let error = document.getElementById("ageError");
+    
+    if (age < 18 || age > 120 || isNaN(age)) {
+        error.textContent = "Age must be between 18 and 120";
+        error.style.display = "block";
+        return false;
+    } else {
+        error.style.display = "none";
+        return true;
+    }
+}
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    if (validateName() && validateEmail() && validateAge()) {
+        document.getElementById("formResult").textContent = "Form submitted successfully!";
+        form.reset();
+    } else {
+        document.getElementById("formResult").textContent = "Please fix the errors above.";
+    }
+});
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 7: Dynamic Content Loader</h3>
+        <p>Create a system to dynamically load and display content.</p>
+        <div class="interactive">
+            <button onclick="loadContent('users')">Load Users</button>
+            <button onclick="loadContent('posts')">Load Posts</button>
+            <button onclick="loadContent('products')">Load Products</button>
+            <div id="contentArea" class="demo-box">
+                <p>Click a button to load content...</p>
+            </div>
+        </div>
+        <div class="code-block">
+            // TODO: Create mock data for users, posts, and products
+            // TODO: Function to load content based on type parameter
+            // TODO: Clear previous content before loading new content
+            // TODO: Create HTML elements to display the data
+            // TODO: Add loading animation or message
+        </div>
+        <button onclick="showSolution(7)">Show Solution</button>
+        <div id="solution7" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+// Mock data
+let mockData = {
+    users: [
+        {name: "John Doe", email: "john@example.com", age: 30},
+        {name: "Jane Smith", email: "jane@example.com", age: 25},
+        {name: "Bob Johnson", email: "bob@example.com", age: 35}
+    ],
+    posts: [
+        {title: "First Post", content: "This is the first post content", author: "John"},
+        {title: "Second Post", content: "This is the second post content", author: "Jane"},
+        {title: "Third Post", content: "This is the third post content", author: "Bob"}
+    ],
+    products: [
+        {name: "Laptop", price: 999, category: "Electronics"},
+        {name: "Book", price: 19, category: "Education"},
+        {name: "Coffee Mug", price: 12, category: "Home"}
+    ]
+};
+
+function loadContent(type) {
+    let contentArea = document.getElementById("contentArea");
+    contentArea.innerHTML = "<p>Loading...</p>";
+    
+    // Simulate loading delay
+    setTimeout(() => {
+        let data = mockData[type];
+        if (!data) {
+            contentArea.innerHTML = "<p>No data available</p>";
+            return;
+        }
+        
+        let html = `<h3>${type.charAt(0).toUpperCase() + type.slice(1)}</h3>`;
+        
+        data.forEach(item => {
+            html += "<div style='border: 1px solid #ddd; padding: 10px; margin: 5px 0;'>";
+            for (let key in item) {
+                html += `<strong>${key}:</strong> ${item[key]}<br>`;
+            }
+            html += "</div>";
+        });
+        
+        contentArea.innerHTML = html;
+    }, 500);
+}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSolution(exerciseNumber) {
+            const solution = document.getElementById(`solution${exerciseNumber}`);
+            solution.classList.toggle('show');
+        }
+
+        // Initialize event listeners for Exercise 3
+        let eventBox = document.getElementById("eventBox");
+        let eventLog = document.getElementById("eventLog");
+
+        eventBox.addEventListener("click", function() {
+            logEvent("Box was clicked!");
+        });
+
+        eventBox.addEventListener("mouseenter", function() {
+            this.style.backgroundColor = "#e3f2fd";
+            logEvent("Mouse entered the box");
+        });
+
+        eventBox.addEventListener("mouseleave", function() {
+            this.style.backgroundColor = "";
+            logEvent("Mouse left the box");
+        });
+
+        document.addEventListener("keydown", function(event) {
+            logEvent(`Key pressed: ${event.key}`);
+        });
+
+        function logEvent(message) {
+            eventLog.textContent = message;
+        }
+
+        // Initialize color changer for Exercise 4
+        function changeBoxColor() {
+            let colorPicker = document.getElementById("colorPicker");
+            let colorBox = document.getElementById("colorBox");
+            let colorInfo = document.getElementById("colorInfo");
+            
+            let selectedColor = colorPicker.value;
+            colorBox.style.backgroundColor = selectedColor;
+            colorInfo.textContent = `Current color: ${selectedColor}`;
+        }
+
+        function randomColor() {
+            let colorBox = document.getElementById("colorBox");
+            let colorInfo = document.getElementById("colorInfo");
+            
+            let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            colorBox.style.backgroundColor = randomColor;
+            colorInfo.textContent = `Current color: ${randomColor}`;
+        }
+
+        // Initialize todo list for Exercise 5
+        let todos = [];
+
+        function addTodo() {
+            let input = document.getElementById("todoInput");
+            let text = input.value.trim();
+            
+            if (text !== "") {
+                let todo = {
+                    id: Date.now(),
+                    text: text,
+                    completed: false
+                };
+                
+                todos.push(todo);
+                input.value = "";
+                displayTodos();
+            }
+        }
+
+        function toggleTodo(id) {
+            let todo = todos.find(t => t.id === id);
+            if (todo) {
+                todo.completed = !todo.completed;
+                displayTodos();
+            }
+        }
+
+        function deleteTodo(id) {
+            todos = todos.filter(t => t.id !== id);
+            displayTodos();
+        }
+
+        function displayTodos() {
+            let todoList = document.getElementById("todoList");
+            todoList.innerHTML = "";
+            
+            todos.forEach(todo => {
+                let todoItem = document.createElement("div");
+                todoItem.className = "todo-item";
+                if (todo.completed) {
+                    todoItem.classList.add("completed");
+                }
+                
+                todoItem.innerHTML = `
+                    <span>${todo.text}</span>
+                    <div>
+                        <button onclick="toggleTodo(${todo.id})">
+                            ${todo.completed ? 'Undo' : 'Complete'}
+                        </button>
+                        <button onclick="deleteTodo(${todo.id})">Delete</button>
+                    </div>
+                `;
+                
+                todoList.appendChild(todoItem);
+            });
+        }
+
+        // Initialize form validation for Exercise 6
+        let form = document.getElementById("validationForm");
+        let nameInput = document.getElementById("nameInput");
+        let emailInput = document.getElementById("emailInput");
+        let ageInput = document.getElementById("ageInput");
+
+        nameInput.addEventListener("input", validateName);
+        emailInput.addEventListener("input", validateEmail);
+        ageInput.addEventListener("input", validateAge);
+
+        function validateName() {
+            let name = nameInput.value.trim();
+            let error = document.getElementById("nameError");
+            
+            if (name.length < 2) {
+                error.textContent = "Name must be at least 2 characters long";
+                error.style.display = "block";
+                return false;
+            } else {
+                error.style.display = "none";
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            let email = emailInput.value.trim();
+            let error = document.getElementById("emailError");
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!emailRegex.test(email)) {
+                error.textContent = "Please enter a valid email address";
+                error.style.display = "block";
+                return false;
+            } else {
+                error.style.display = "none";
+                return true;
+            }
+        }
+
+        function validateAge() {
+            let age = parseInt(ageInput.value);
+            let error = document.getElementById("ageError");
+            
+            if (age < 18 || age > 120 || isNaN(age)) {
+                error.textContent = "Age must be between 18 and 120";
+                error.style.display = "block";
+                return false;
+            } else {
+                error.style.display = "none";
+                return true;
+            }
+        }
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            if (validateName() && validateEmail() && validateAge()) {
+                document.getElementById("formResult").textContent = "Form submitted successfully!";
+                form.reset();
+            } else {
+                document.getElementById("formResult").textContent = "Please fix the errors above.";
+            }
+        });
+
+        // Initialize content loader for Exercise 7
+        let mockData = {
+            users: [
+                {name: "John Doe", email: "john@example.com", age: 30},
+                {name: "Jane Smith", email: "jane@example.com", age: 25},
+                {name: "Bob Johnson", email: "bob@example.com", age: 35}
+            ],
+            posts: [
+                {title: "First Post", content: "This is the first post content", author: "John"},
+                {title: "Second Post", content: "This is the second post content", author: "Jane"},
+                {title: "Third Post", content: "This is the third post content", author: "Bob"}
+            ],
+            products: [
+                {name: "Laptop", price: 999, category: "Electronics"},
+                {name: "Book", price: 19, category: "Education"},
+                {name: "Coffee Mug", price: 12, category: "Home"}
+            ]
+        };
+
+        function loadContent(type) {
+            let contentArea = document.getElementById("contentArea");
+            contentArea.innerHTML = "<p>Loading...</p>";
+            
+            setTimeout(() => {
+                let data = mockData[type];
+                if (!data) {
+                    contentArea.innerHTML = "<p>No data available</p>";
+                    return;
+                }
+                
+                let html = `<h3>${type.charAt(0).toUpperCase() + type.slice(1)}</h3>`;
+                
+                data.forEach(item => {
+                    html += "<div style='border: 1px solid #ddd; padding: 10px; margin: 5px 0;'>";
+                    for (let key in item) {
+                        html += `<strong>${key}:</strong> ${item[key]}<br>`;
+                    }
+                    html += "</div>";
+                });
+                
+                contentArea.innerHTML = html;
+            }, 500);
+        }
+    </script>
+</body>
+</html> 

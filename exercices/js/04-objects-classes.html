@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects & Classes - Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .exercise h3 {
+            color: #333;
+            border-bottom: 2px solid #ffc107;
+            padding-bottom: 10px;
+        }
+        .exercise p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .solution {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            display: none;
+        }
+        .solution.show {
+            display: block;
+        }
+        button {
+            background: #ffc107;
+            color: #212529;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #e0a800;
+        }
+        .interactive {
+            background: #e7f3ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .object-display {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Objects & Classes - Exercises</h1>
+    
+    <div class="exercise">
+        <h3>Exercise 1: Basic Objects</h3>
+        <p>Create and manipulate basic objects.</p>
+        <div class="code-block">
+            // TODO: Create an object called 'person' with properties: name, age, city
+            // TODO: Add a method called 'greet' that returns "Hello, my name is [name]"
+            // TODO: Add a method called 'getInfo' that returns all person info
+            // TODO: Add a new property 'job' to the person object
+            // TODO: Print the results using console.log()
+        </div>
+        <button onclick="showSolution(1)">Show Solution</button>
+        <div id="solution1" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let person = {
+    name: "John",
+    age: 30,
+    city: "New York",
+    greet: function() {
+        return "Hello, my name is " + this.name;
+    },
+    getInfo: function() {
+        return `${this.name} is ${this.age} years old and lives in ${this.city}`;
+    }
+};
+
+// Add new property
+person.job = "Developer";
+
+console.log(person.greet());
+console.log(person.getInfo());
+console.log("Job:", person.job);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 2: Object Destructuring</h3>
+        <p>Practice extracting values from objects using destructuring.</p>
+        <div class="code-block">
+            // TODO: Create an object called 'book' with properties: title, author, year, genre
+            // TODO: Use destructuring to extract title and author into separate variables
+            // TODO: Use destructuring with default values for missing properties
+            // TODO: Use destructuring in function parameters
+            // TODO: Print all results using console.log()
+        </div>
+        <button onclick="showSolution(2)">Show Solution</button>
+        <div id="solution2" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let book = {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    year: 1925,
+    genre: "Fiction"
+};
+
+// Basic destructuring
+let { title, author } = book;
+console.log("Title:", title);
+console.log("Author:", author);
+
+// Destructuring with default values
+let { publisher = "Unknown" } = book;
+console.log("Publisher:", publisher);
+
+// Function with destructuring
+function printBookInfo({ title, author, year }) {
+    console.log(`${title} by ${author} (${year})`);
+}
+
+printBookInfo(book);
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 3: Constructor Functions</h3>
+        <p>Create objects using constructor functions.</p>
+        <div class="code-block">
+            // TODO: Create a constructor function called 'Car' with properties: brand, model, year
+            // TODO: Add a method called 'getInfo' that returns car information
+            // TODO: Add a method called 'isOld' that returns true if car is older than 10 years
+            // TODO: Create two car instances using 'new' keyword
+            // TODO: Test all methods and print results
+        </div>
+        <button onclick="showSolution(3)">Show Solution</button>
+        <div id="solution3" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+function Car(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    
+    this.getInfo = function() {
+        return `${this.year} ${this.brand} ${this.model}`;
+    };
+    
+    this.isOld = function() {
+        let currentYear = new Date().getFullYear();
+        return (currentYear - this.year) > 10;
+    };
+}
+
+let car1 = new Car("Toyota", "Camry", 2020);
+let car2 = new Car("Ford", "Mustang", 2010);
+
+console.log(car1.getInfo());
+console.log("Is old:", car1.isOld());
+console.log(car2.getInfo());
+console.log("Is old:", car2.isOld());
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 4: Classes</h3>
+        <p>Create classes using modern ES6 syntax.</p>
+        <div class="code-block">
+            // TODO: Create a class called 'Student' with properties: name, age, grade
+            // TODO: Add a constructor method
+            // TODO: Add a method called 'getInfo' that returns student information
+            // TODO: Add a method called 'isPassing' that returns true if grade >= 60
+            // TODO: Add a method called 'study' that increases grade by 5 points
+            // TODO: Create student instances and test all methods
+        </div>
+        <button onclick="showSolution(4)">Show Solution</button>
+        <div id="solution4" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+class Student {
+    constructor(name, age, grade) {
+        this.name = name;
+        this.age = age;
+        this.grade = grade;
+    }
+    
+    getInfo() {
+        return `${this.name} (${this.age} years old) - Grade: ${this.grade}`;
+    }
+    
+    isPassing() {
+        return this.grade >= 60;
+    }
+    
+    study() {
+        this.grade += 5;
+        if (this.grade > 100) this.grade = 100;
+        return `${this.name} studied and now has grade ${this.grade}`;
+    }
+}
+
+let student1 = new Student("Alice", 20, 75);
+let student2 = new Student("Bob", 19, 55);
+
+console.log(student1.getInfo());
+console.log("Is passing:", student1.isPassing());
+console.log(student1.study());
+
+console.log(student2.getInfo());
+console.log("Is passing:", student2.isPassing());
+console.log(student2.study());
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 5: Interactive Student Manager</h3>
+        <p>Create an interactive tool to manage student objects.</p>
+        <div class="interactive">
+            <input type="text" id="studentName" placeholder="Student name">
+            <input type="number" id="studentAge" placeholder="Age">
+            <input type="number" id="studentGrade" placeholder="Grade (0-100)">
+            <button onclick="addStudent()">Add Student</button>
+            <button onclick="listStudents()">List All Students</button>
+            <button onclick="findPassingStudents()">Show Passing Students</button>
+            <div class="object-display" id="studentDisplay"></div>
+        </div>
+        <div class="code-block">
+            // TODO: Create an array to store student objects
+            // TODO: Function to add a new student to the array
+            // TODO: Function to display all students
+            // TODO: Function to filter and show only passing students
+            // TODO: Add input validation
+        </div>
+        <button onclick="showSolution(5)">Show Solution</button>
+        <div id="solution5" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+let students = [];
+
+function addStudent() {
+    let name = document.getElementById("studentName").value;
+    let age = parseInt(document.getElementById("studentAge").value);
+    let grade = parseInt(document.getElementById("studentGrade").value);
+    
+    if (name && age > 0 && grade >= 0 && grade <= 100) {
+        let student = new Student(name, age, grade);
+        students.push(student);
+        
+        // Clear inputs
+        document.getElementById("studentName").value = "";
+        document.getElementById("studentAge").value = "";
+        document.getElementById("studentGrade").value = "";
+        
+        listStudents();
+    } else {
+        alert("Please enter valid information!");
+    }
+}
+
+function listStudents() {
+    let display = "All Students:\n";
+    students.forEach((student, index) => {
+        display += `${index + 1}. ${student.getInfo()}\n`;
+    });
+    document.getElementById("studentDisplay").textContent = display;
+}
+
+function findPassingStudents() {
+    let passing = students.filter(student => student.isPassing());
+    let display = "Passing Students:\n";
+    passing.forEach((student, index) => {
+        display += `${index + 1}. ${student.getInfo()}\n`;
+    });
+    document.getElementById("studentDisplay").textContent = display;
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 6: Inheritance</h3>
+        <p>Practice class inheritance and the super keyword.</p>
+        <div class="code-block">
+            // TODO: Create a base class called 'Animal' with properties: name, age
+            // TODO: Add a method called 'speak' that returns "[name] makes a sound"
+            // TODO: Create a subclass called 'Dog' that extends Animal
+            // TODO: Add a property 'breed' to Dog
+            // TODO: Override the speak method to return "[name] barks"
+            // TODO: Create a subclass called 'Cat' that extends Animal
+            // TODO: Override the speak method to return "[name] meows"
+            // TODO: Create instances and test all methods
+        </div>
+        <button onclick="showSolution(6)">Show Solution</button>
+        <div id="solution6" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+class Animal {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    speak() {
+        return `${this.name} makes a sound`;
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, age, breed) {
+        super(name, age);
+        this.breed = breed;
+    }
+    
+    speak() {
+        return `${this.name} barks`;
+    }
+}
+
+class Cat extends Animal {
+    constructor(name, age) {
+        super(name, age);
+    }
+    
+    speak() {
+        return `${this.name} meows`;
+    }
+}
+
+let dog = new Dog("Buddy", 5, "Golden Retriever");
+let cat = new Cat("Whiskers", 3);
+
+console.log(dog.speak());
+console.log("Breed:", dog.breed);
+console.log(cat.speak());
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 7: Getters and Setters</h3>
+        <p>Practice using getters and setters in classes.</p>
+        <div class="code-block">
+            // TODO: Create a class called 'BankAccount' with private balance property
+            // TODO: Add a getter for balance that returns the current balance
+            // TODO: Add a setter for balance that only allows positive values
+            // TODO: Add methods: deposit(amount), withdraw(amount)
+            // TODO: Add validation to prevent negative withdrawals
+            // TODO: Create an account instance and test all methods
+        </div>
+        <button onclick="showSolution(7)">Show Solution</button>
+        <div id="solution7" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+class BankAccount {
+    constructor(initialBalance = 0) {
+        this._balance = initialBalance;
+    }
+    
+    get balance() {
+        return this._balance;
+    }
+    
+    set balance(value) {
+        if (value >= 0) {
+            this._balance = value;
+        } else {
+            console.log("Balance cannot be negative");
+        }
+    }
+    
+    deposit(amount) {
+        if (amount > 0) {
+            this._balance += amount;
+            return `Deposited $${amount}. New balance: $${this._balance}`;
+        } else {
+            return "Invalid deposit amount";
+        }
+    }
+    
+    withdraw(amount) {
+        if (amount > 0 && amount <= this._balance) {
+            this._balance -= amount;
+            return `Withdrew $${amount}. New balance: $${this._balance}`;
+        } else {
+            return "Insufficient funds or invalid amount";
+        }
+    }
+}
+
+let account = new BankAccount(100);
+console.log("Initial balance:", account.balance);
+console.log(account.deposit(50));
+console.log(account.withdraw(30));
+console.log(account.withdraw(200)); // Should fail
+            </div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 8: Static Methods</h3>
+        <p>Practice using static methods in classes.</p>
+        <div class="code-block">
+            // TODO: Create a class called 'MathUtils' with static methods
+            // TODO: Add static method 'add(a, b)' that returns sum
+            // TODO: Add static method 'multiply(a, b)' that returns product
+            // TODO: Add static method 'isEven(num)' that returns boolean
+            // TODO: Add static property 'PI' with value 3.14159
+            // TODO: Test all static methods without creating instances
+        </div>
+        <button onclick="showSolution(8)">Show Solution</button>
+        <div id="solution8" class="solution">
+            <strong>Solution:</strong><br>
+            <div class="code-block">
+class MathUtils {
+    static PI = 3.14159;
+    
+    static add(a, b) {
+        return a + b;
+    }
+    
+    static multiply(a, b) {
+        return a * b;
+    }
+    
+    static isEven(num) {
+        return num % 2 === 0;
+    }
+    
+    static getCircleArea(radius) {
+        return this.PI * radius * radius;
+    }
+}
+
+console.log("PI:", MathUtils.PI);
+console.log("5 + 3 =", MathUtils.add(5, 3));
+console.log("4 × 7 =", MathUtils.multiply(4, 7));
+console.log("Is 10 even?", MathUtils.isEven(10));
+console.log("Is 7 even?", MathUtils.isEven(7));
+console.log("Circle area (radius 5):", MathUtils.getCircleArea(5));
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSolution(exerciseNumber) {
+            const solution = document.getElementById(`solution${exerciseNumber}`);
+            solution.classList.toggle('show');
+        }
+
+        // Initialize student manager
+        let students = [];
+
+        class Student {
+            constructor(name, age, grade) {
+                this.name = name;
+                this.age = age;
+                this.grade = grade;
+            }
+            
+            getInfo() {
+                return `${this.name} (${this.age} years old) - Grade: ${this.grade}`;
+            }
+            
+            isPassing() {
+                return this.grade >= 60;
+            }
+            
+            study() {
+                this.grade += 5;
+                if (this.grade > 100) this.grade = 100;
+                return `${this.name} studied and now has grade ${this.grade}`;
+            }
+        }
+
+        function addStudent() {
+            let name = document.getElementById("studentName").value;
+            let age = parseInt(document.getElementById("studentAge").value);
+            let grade = parseInt(document.getElementById("studentGrade").value);
+            
+            if (name && age > 0 && grade >= 0 && grade <= 100) {
+                let student = new Student(name, age, grade);
+                students.push(student);
+                
+                // Clear inputs
+                document.getElementById("studentName").value = "";
+                document.getElementById("studentAge").value = "";
+                document.getElementById("studentGrade").value = "";
+                
+                listStudents();
+            } else {
+                alert("Please enter valid information!");
+            }
+        }
+
+        function listStudents() {
+            let display = "All Students:\n";
+            students.forEach((student, index) => {
+                display += `${index + 1}. ${student.getInfo()}\n`;
+            });
+            document.getElementById("studentDisplay").textContent = display;
+        }
+
+        function findPassingStudents() {
+            let passing = students.filter(student => student.isPassing());
+            let display = "Passing Students:\n";
+            passing.forEach((student, index) => {
+                display += `${index + 1}. ${student.getInfo()}\n`;
+            });
+            document.getElementById("studentDisplay").textContent = display;
+        }
+    </script>
+</body>
+</html> 
