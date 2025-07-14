@@ -151,9 +151,9 @@ https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_dom_add1
     ```js
     $("#myLink").text("Demo");
     $("#myLink").attr("href", "https://www.demo.com");
-    ```
+    ``` 
 
-### add
+### add
 
 * append yes to the end of a p
     ```js
